@@ -1,0 +1,80 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<div class="container">
+    <h1 align="center"><b>Product Management</b></h1>
+    <button class="btn btn-info" align="left" routerLink="/admin">Back</button>&nbsp;
+    <button class="bth btn-info" style="background-color: darkgreen;" style="float: right;" data-toggle="modal" data-target="#modal" (click)="check(1)"
+        align="left">ADD PRODUCT</button>
+</div>
+<div class="container">
+    <table class="table table-stripped table-condensed table-bordered table-hover">
+        <thead>
+            <tr style="background-color:rgb(17, 199, 227); color:rgb(248, 247, 248) ">
+                <th>productId</th>
+                <th>productName</th>
+                <th>productDescription</th>
+                <th>productCategoryId</th>
+                <th>productPrice</th>
+                <th>productImage</th>
+              <th>productQuantity</th> 
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody style="background-color:rgb(99, 182, 214);color:rgb(0, 0, 0)">
+            <tr *ngFor="let p of product">
+                <td>{{p.productId}}</td>
+                <td>{{p.productName}}</td>
+                <td>{{p.productDescription}}</td> 
+                <td>{{p.productCategoryId}}</td>
+                <td>{{p.productPrice}}</td>
+                <td><img src="{{p.productImage}}" alt="no photo" width="20%"></td>
+                 <td>{{p.productQuantity}}</td> 
+               
+               <td>
+                    <button class="btn btn-success" data-toggle="modal" data-target="#modal"
+                        (click)="updateProduct(p)">Update</button>
+                    <button class="btn btn-danger" (click)="deleteProduct(p.productId)">Delete</button> 
+                </td> 
+
+                   
+                
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal" id="modal" role="dialog" >
+    <div class="modal-content">
+        <div class="container" style="background-color:rgb(219, 226, 232);color:brown ">
+            <form #stdform="ngForm" (ngSubmit)="edit(ptd)">
+                Product Name:<input type="text" name="productName" [(ngModel)]="ptd.productName"><br><br>
+               <label> PCategory Id:</label>
+               <select id="in" ngModel name="productCategoryId" #productCategoryId="ngModel" [(ngModel)]="ptd.productCategoryId" aria-placeholder="select">
+                <option value="1" style="font-size:medium;">1</option> 
+                <option value="2" style="font-size:medium;" >2</option>
+                <option value="3" style="font-size:medium;" >3</option>
+                <option value="4" style="font-size:medium;" >4</option>
+                <option value="5" style="font-size:medium;" >5</option>
+                <option value="6" style="font-size:medium;" >6</option> 
+                <option value="7" style="font-size:medium;" >7</option> 
+                <option value="8" style="font-size:medium;" >8</option>
+                <option value="9" style="font-size:medium;" >9</option>
+              </select>
+
+              <br><br>
+             <label>Product Description</label><input type="text" name="productDescription" [(ngModel)]="ptd.productDescription"><br><br>
+               <label> Product Image:</label><input type="text" name="productImage" [(ngModel)]="ptd.productImage"><br><br>
+                 <label>  Product Price:</label><input type="text" name="productPrice" [(ngModel)]="ptd.productPrice"><br><br>
+                 Product Quantity:<input type="text" name="productQuantity" [(ngModel)]="ptd.productQuantity"><br><br>
+                 <input type="submit" value="Save"> <br>
+                
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+

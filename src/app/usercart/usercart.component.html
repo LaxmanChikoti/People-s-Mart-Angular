@@ -1,0 +1,53 @@
+<body>
+     <ng-container *ngIf="usercart.length !=0">  
+        <div class="container">
+            <h3>MY Cart<img src="https://i.pinimg.com/originals/2b/4b/03/2b4b036050ea3bfa3bd476c7ee4fd028.gif" width="80px" height="80px"></h3>
+            <table class="table table-stripped table-condensed table-bordered table-hover">
+                <thead>
+                    <tr style="background-color:rgb(247, 252, 252); color:rgb(11, 3, 19) ">
+                        <th>Product</th>
+                        <th>Product Quantity</th>
+                        <th>Product Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody style="background-color:rgb(250, 253, 253);color:rgb(10, 10, 10)">
+                    <tr *ngFor="let c of usercart">
+                        <td><img src="{{c.productImage}}" alt="no photo" width="12%"><b style="font-size: larger; font-family: 'Times New Roman', Times, serif;">&nbsp;&nbsp; {{c.productName}}</b></td>
+                        <td><input type="number" [(ngModel)]="c.productQuantity" min="1" max="10"></td>
+                        <td >{{c.productPrice | total: c.productQuantity | currency: 'INR'}}</td>
+                        <td>
+                            <button (click)="update(c)" style="background-color: rgba(0, 255, 255, 0); border-color:rgba(0, 255, 255, 0) ;"><b>↻</b></button><br>
+                            <button (click)="delete(c)" style="background-color: rgba(0, 255, 255, 0); border-color:rgba(0, 255, 255, 0) ;"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1"></td>
+                        <td><button routerLink="/user" class="btn btn-primary">Order More</button></td>
+                        <td><strong>Total:{{total | currency:'INR'}}</strong></td>
+                        <td><button class="btn btn-success" (click)=pay()>Pay</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </ng-container>  
+     <ng-container *ngIf="usercart.length == 0"> 
+        <div class="container">
+            <div class="Jumbotron">
+                <h3 class="card-title">My Cart</h3>
+            </div>
+            <div class="center">
+                <div class="center">
+                    
+                    <img src="https://bakestudio.in/assets/images/cart/empty-cart.gif"
+                        alt="Cart Is Empty" style="height: 400px;">
+
+                    <h3 style="color: red;">Your cart is empty!</h3>
+                    <h4>Add Product to it now</h4>
+                    <button routerLink="/user" class="btn btn-info">Shop Now</button>
+                </div>
+            </div>
+        </div>
+     </ng-container> 
+    </body>
+    

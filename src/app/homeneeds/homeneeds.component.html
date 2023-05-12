@@ -1,0 +1,40 @@
+<html>
+    <head>
+      <h1>Home Needs Working</h1>
+    </head>
+    <body>
+    
+        <div *ngFor="let hom of homeneeds">
+    
+            <div class="col-lg-1"></div>
+               <div class = "col-lg-3"> 
+                  <div class="container">
+                    <div class="card" style="width:300px">
+                      <div class="card-header">
+                           <div class="card-body">
+                        <h4 class="card-title">Gadgets</h4>
+                        <br><img src={{hom.productImage}} height="150" width="200" class="img-rounded"><br>
+                        <strong>Productid:{{hom.productId}}</strong><br>
+                        <strong>Productname:{{hom.productName}}</strong><br>
+                        <strong>Product Description:{{hom.productDescription}}</strong><br>
+                        <strong>Product CategoryTd:{{hom.productCategoryId}}</strong><br>
+                            <strong>Product Price:{{hom.productPrice}}</strong><br>
+                            <strong>productQuantity:{{hom.productQuantity}}</strong><br>
+                            <br>
+                              <div class="col-lg-2">
+                              <button class="btn btn-primary">Add to Cart</button>  </div>
+                              <div class="col-lg-2"></div>
+                              <div class="col-lg-2">
+                           <a href="" target = "_blank" class="btn btn-primary">Buy Now</a></div>
+                           
+                      </div>
+                    </div>
+                    </div>
+                    </div>
+                  </div> 
+    
+    
+                  </div>
+    </body>
+    </html> 
+    

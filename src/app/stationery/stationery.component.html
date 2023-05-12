@@ -1,0 +1,40 @@
+<html>
+    <head>
+      <h1>Vechiles Working</h1>
+    </head>
+    <body>
+    
+        <div *ngFor="let sta of stationeries">
+    
+            <div class="col-lg-1"></div>
+               <div class = "col-lg-3"> 
+                  <div class="container">
+                    <div class="card" style="width:300px">
+                      <div class="card-header">
+                           <div class="card-body">
+                        <h4 class="card-title">Gadgets</h4>
+                        <br><img src={{sta.productImage}} height="150" width="200" class="img-rounded"><br>
+                        <strong>Productid:{{sta.productId}}</strong><br>
+                        <strong>Productname:{{sta.productName}}</strong><br>
+                        <strong>Product Description:{{sta.productDescription}}</strong><br>
+                        <strong>Product CategoryTd:{{sta.productCategoryId}}</strong><br>
+                            <strong>Product Price:{{sta.productPrice}}</strong><br>
+                            <strong>productQuantity:{{sta.productQuantity}}</strong><br>
+                            <br>
+                              <div class="col-lg-2">
+                              <button class="btn btn-primary">Add to Cart</button>  </div>
+                              <div class="col-lg-2"></div>
+                              <div class="col-lg-2">
+                           <a href="" target = "_blank" class="btn btn-primary">Buy Now</a></div>
+                           
+                      </div>
+                    </div>
+                    </div>
+                    </div>
+                  </div> 
+    
+    
+                  </div>
+    </body>
+    </html> 
+    

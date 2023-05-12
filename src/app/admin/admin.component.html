@@ -1,0 +1,131 @@
+<body>
+    <header class="site-header">
+        <div class="site-identity">
+            <!--Place a project logo-->
+        </div>
+        <nav class="site-navigation">
+            <ul class="nav" style="font-size: 20px">
+                <!-- <li><a routerLink="/product"><b>Product</b></a></li>
+                <li><a routerLink="/showusers"><b>Userdata</b></a></li>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+               <div class="col-lg-10"></div>
+                <li><button  type="button" class="btn btn-outline-danger btn-lg"   (click)="success()" id="log"><b>Logout</b></button></li>
+            </ul><br>
+        </nav>
+    </header>
+    <div class=" text-center" style="   border-radius: 50px; background-color: aliceblue;  color: rgb(0, 0, 0); font-family: 'Times New Roman', Times, serif;" >
+        <h1 style="font-size: xx-large;" align="center">Welcome Back, Admin</h1>
+        <!-- <h1 align="center" style="font-size: x-large;"><b>{{thisUser}}</b></h1> -->
+    </div>
+    <div class="col-sm-2 pt-2"></div>   
+    <div class="container">
+        <div class="col-sm-4 pt-4">
+            <div class="card" style="color: black;">
+                <div class="card-body" align="center">
+                    <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:720%;"></i><br><br>
+                    <h4 class="card-title"><b>Products</b></h4>
+                    <h4 class="catrd-text"><i>Manage the Products</i></h4><br>
+                    <a routerLink="/product" th:href="@{admin/Products}" class="card-link btn btn-muted"
+                        style="background-color: rgb(47, 46, 46);">
+                        <h3 style="color: white;">Manage</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 pt-4">
+            <div class="card" style="color: black;">
+                <div class="card-body" align="center">
+                    <i class="fa fa-user-o" aria-hidden="true" style="font-size:720%;"></i><br><br>
+                    <h4 class="card-title"><b>Userdata</b></h4>
+                    <h4 class="catrd-text"><i>Manage the Userdata</i> </h4><br>
+                    <a routerLink="/showusers" th:href="@{admin/showusers}" class="card-link btn btn-muted"
+                        style="background-color: rgb(47, 46, 46);">
+                        <h3 style="color: white;">Manage</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+<!-- <div class="col-sm-4 pt-4">
+            <div class="card" style="background-color:gainsboro;">
+                <div class="card-body" align="center">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true" style="font-size:720%;"></i><br><br>
+                    <h4 class="card-title">Logout</h4>
+                    <p class="catrd-text">&nbsp;</p>
+                    <a (click)="success()" th:href="@{admin/showusers}" class="card-link btn btn-muted"
+                        style="background-color: rgb(47, 46, 46);">
+                        <h3 style="color: white;">Manage</h3>
+                    </a>
+                </div>
+            </div>
+        </div> -->
+
+
+
+    <!-- <footer>
+        <div class="container-fluid mt-5">
+            <div class="card bg-white mx-5">
+                <div class="row mb-4">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="footer-text pull-left">
+                            <div class="d-flex">
+                                <h1 style="color: #1c030ef8;font-size: xx-large;"><img src="https://mazzainnovation.com/wp-content/uploads/2015/02/phyto-logo.png"
+                                        style="width: 17%;">Phyto</h1>
+                            </div>
+                            <p class="card-text" style="text-align: justify;"></p>
+                            <div class="social mt-2 mb-3"> <i class="fa fa-facebook-official fa-lg"></i> <i
+                                    class="fa fa-instagram fa-lg"></i> <i class="fa fa-twitter fa-lg"></i> <i
+                                    class="fa fa-linkedin-square fa-lg"></i> <i class="fa fa-facebook"></i> </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <h5 class="heading">Contact Us</h5>
+                        <ul class="footer-contact">
+                            <li class="phone"> <i class="fa fa-phone"></i> &nbsp; +91&nbsp;99887 76655</li>
+                            <li class="email"><i class="fa fa-envelope"></i> &nbsp; service@phyto.in</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <h5 class="heading">Services</h5>
+                        <ul>
+                            <li>Online Service</li>
+                            <li>Easy Returns</li>
+                            <li>Delivery To Your Doorstep</li>
+                            <li>Support</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <h5 class="heading">Company</h5>
+                        <ul class="card-text">
+                            <li>About Us</li>
+                            <li>Blog</li>
+                            <li>Contact</li>
+                            <li>Join Us</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="divider mb-4"></div>
+                <div class="row" style="font-size:10px;">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="pull-left">
+                            <p><b>Copyright <i class="fa fa-copyright"></i> 2023 Phyto</b></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="pull-right mr-4 d-flex policy">
+                            <div id="l">Terms & Conditions</div>
+                            <div id="l">Privacy Policy</div>
+                            <div id="l">Cookie Policy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>

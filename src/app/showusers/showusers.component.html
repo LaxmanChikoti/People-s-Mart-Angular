@@ -1,0 +1,88 @@
+<body>
+<div class="col-lg-5"></div>
+<h2>User Management</h2>
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+<div class="container">
+    <div class="modal fade" id="userModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    <h4 class="modal-title">Update Form</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group">
+                         Enter Id: <input type="number" name="userId" [(ngModel)]="editObject.userId"
+                            class="form-control" ><br> 
+                        Enter User Name: <input type="text" name="userName" [(ngModel)]="editObject.userName"
+                            class="form-control"><br>
+                        Enter User Address: <input type="text" name="userAddress" [(ngModel)]="editObject.userAddress"
+                            class="form-control"><br>
+                        Enter Mobile Number: <input type="text" name="mobileNumber" [(ngModel)]="editObject.mobileNumber"
+                            class="form-control"><br>
+                        Enter EmailId: <input type="email" name="emailId" [(ngModel)]="editObject.emailId"
+                            class="form-control"><br>
+                        Enter Password: <input type="password" name="password" [(ngModel)]="editObject.password"
+                            class="form-control"><br>
+                             <!-- Enter UserType: <input type="text" name="userType" [(ngModel)]="editObject.userType"
+                            class="form-control"><br>  -->
+
+                            <!-- <label>Usertype</label>
+                            <select id="in" ngModel name="userType" #userType="ngModel" [(ngModel)]="editObject.userType" aria-placeholder="select">
+                                <option value="admin" style="font-size:medium;">admin</option> 
+                                <option value="user" style="font-size:medium;" >user</option>
+                              </select> -->
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" (click)="updateuser()" data-dismiss="modal">Update</button>
+                </div>
+            </div>
+         </div>
+    </div> 
+  
+<div class="jumbotron">
+    <form class="form-group" novalidation>
+
+<table border="5px" align="center" class="table table-bordered table-condensed table-hover table-stripped" >
+<tr style="background-color:rgb(53, 50, 230); color:rgb(248, 247, 248)">
+<th>UserId</th>
+<th>User Name</th>
+<th>User Addresss</th>
+<th>Mobile Number</th>
+<th>Email Id</th>
+<!-- <th>Password</th> -->
+<!-- <th>User Type</th> -->
+<!-- <th>country</th> -->
+
+<th colspan="2">Actions</th>
+
+</tr>
+<tr *ngFor="let user of users" >
+
+
+    <td>{{user.userId}}</td>
+    <td>{{user.userName}}</td>
+    <td>{{user.userAddress}}</td>
+    <td>{{user.mobileNumber}}</td>
+    <td>{{user.emailId}}</td>
+    <!-- <td>{{user.password}}</td> -->
+    <!-- <td>{{user.userType}}</td> -->
+    <!-- <td>{{emp.country}}</td> -->
+    {{user.data}} 
+    <td><button (click)="deleteUser(user.userId)" class="glyphicon glyphicon-trash"></button></td>
+    <td><button (click)="showEditPopup(user)" class="glyphicon glyphicon-pencil"></button></td> 
+     
+</tr>
+</table>
+</form>
+</div>
+</div>
+</body>

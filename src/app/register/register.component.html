@@ -1,0 +1,70 @@
+
+<html>
+    <body>
+
+<div class="pageheader"><h1 align="Center">Registration Form</h1></div>
+
+
+    
+         <div class="col-lg-4"></div> 
+        <div class = "col-lg-4">
+    <div class="container">
+    <div class="jumbotron">
+<form #registrationform="ngForm" (ngSubmit)="register(registrationform.value)" class="form-group" novalidation>
+     
+    <label>USERNAME</label><input type="text"ngModel #userName="ngModel" name="userName"  placeholder="user name" class="form-control" required><br> 
+    <p *ngIf="userName.errors?.['required'] && userName.touched"> Username is Mandatory</p> 
+    <label>USERADDRESS</label><input type="text"ngModel #userAddress="ngModel" name="userAddress"  placeholder="Hno-street-city-district-state-pincode" class="form-control" required><br>   
+    <p *ngIf="userAddress.errors?.['required'] && userAddress.touched"> Address is Mandatory</p> 
+    <label>MOBILENUMBER</label><input type="text"ngModel #mobileNumber="ngModel" name="mobileNumber"  placeholder="+91**********" class="form-control" required><br>
+    <p *ngIf="mobileNumber.errors?.['required'] && mobileNumber.touched"> Mobile Number is Mandatory</p> 
+    <label>EMAILID</label><input type="email"ngModel #emailId="ngModel" name="emailId"  placeholder="example@gmail.com" class="form-control" required><br>
+    <p *ngIf="emailId.errors?.['required'] && emailId.touched"> EmailID feild cannot be Empty</p>
+    <label>PASSWORD</label><input type="password"ngModel #password="ngModel" name="password"  placeholder="*********" class="form-control" required><br>
+    <p *ngIf="password.errors?.['required'] && password.touched"> Password Feild Cannot be Empty</p> 
+    <!-- <label>Usertype</label>
+    <select id="in" ngModel name="userType" #userType="ngModel" aria-placeholder="select">
+        <option value="admin" style="font-size:medium;">admin</option> 
+        <option value="user" style="font-size:medium;" >user</option>
+      </select> -->
+    <br>
+    <div>
+    <label><input type="checkbox">Remember Me</label></div>
+
+    <h4>Already a user?</h4><a routerLink="/login"><h4>Login</h4></a><br><br>
+     <button class="btn btn-primary btn-lg">Register</button> 
+</form>
+
+
+
+
+
+ 
+ <!-- <p *ngIf="userType.errors?.['required'] && userType.touched"> UserType is Mandatory</p>  -->
+</div>
+</div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
